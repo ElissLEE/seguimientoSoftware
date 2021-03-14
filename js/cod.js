@@ -4,7 +4,10 @@ async function buscarLibro() {
 
     const textoBusqueda = document.getElementById('texto-busqueda');
     const containerInformacion = document.getElementById('informacionBusqueda');
+
+
     containerInformacion.innerHTML = ""
+
     try {
         const isbn = await db.collection("libros").where("ISBN", "==", textoBusqueda.value).get()
         const autor = await db.collection("libros").where("autor", "==", textoBusqueda.value).get()
@@ -16,8 +19,8 @@ async function buscarLibro() {
             if (!res.includes(doc.id)) {
 
                 containerInformacion.innerHTML += "<div> <h1>" + doc.data().titulo + "</h1> " + "Autor: " + doc.data().autor
-                    + "<br/>"+ "Calificacion: "  + doc.data().calificacion + "<br/>" + "Editorial: " + doc.data().editorial + "<br/>"+ "Descripcion: "  + doc.data().descripcion + "<br/>" +
-                     " <img src= '"+ doc.data().url_imagen + "'/> " + "</div>"
+                    + "<br/>" + "Calificacion: " + doc.data().calificacion + "<br/>" + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
+                    " <img src= '" + doc.data().url_imagen + "'/> " + "</div>"
                 res.join(doc.id)
             }
         }
@@ -31,4 +34,7 @@ async function buscarLibro() {
     }
 
 }
+
+
+
 
