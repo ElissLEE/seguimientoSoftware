@@ -64,12 +64,57 @@ async function obtenerLibro(){
     const libro = await db.collection('libros').doc(parametros.id).get()
     const resenias =libro.data().resenias
     containerInformacion.innerHTML = "<h2>Reseñas</h2>"
-   
+    
+
     for (let index = 0; index < resenias.length; index++) {
 
         containerInformacion.innerHTML += resenias[index] + "<br>"
 
     }
+
+    verMas(parametros.id);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function verMas(id_libro) {
+    
+
+    var docRef= db.collection("libros").doc(id_libro)
+        docRef.get().then(function(doc){
+    
+            title= doc.data().titulo;
+            desc= doc.data().descripcion;
+            ruta= doc.data().url_imagen;
+            autor= doc.data().autor
+             
+            data = document.getElementById('data');
+            
+    
+            data.innerHTML = "<div id='container'> <h1>"+title+"</h1> <hr> <img src="+ruta+" style= width:197px ;height:300'><p>"+desc+"</p></div>";
+            
+        })
+    }
+    function loadPage() {
+        obtenerLibro();
+        
+    }
 // al cargar la pagina  ejecuta el metodo  
-window.onload = obtenerLibro
+window.onload = loadPage

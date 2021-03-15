@@ -71,22 +71,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
  
     function traeLibro(id) {
 
-        var docRef= db.collection("libros").doc(id)
-        docRef.get().then(function(doc){
-
-            title= doc.data().titulo;
-            desc= doc.data().descripcion;
-            ruta= doc.data().url_imagen;
-            autor= doc.data().autor,
-             
-            Swal.fire({
-                
-                title:"Autor: "+autor,
-                text: "Descripcion: "+desc,
-              })
-            
-        })
-          
+      url= "pages/libro.html?id="+id;
+      window.location.href= url;
     }
 
     function pintar(starId,num) {
@@ -144,7 +130,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
               if (!res.includes(doc.id)) {
   
                   containerInformacion.innerHTML += "<div> <h1>" + doc.data().titulo + "</h1> " + "Autor: " + doc.data().autor
-                      + "<br/>" + "Calificacion: " + doc.data().calificacion + "<br/>" + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
+                      + "<br/>"  + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
                       " <img src= '" + doc.data().url_imagen + "'/> " + "</div>"
                   res.join(doc.id)
               }
@@ -159,3 +145,34 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       }
   
   }
+
+  async function buscarSimple() {
+
+    const busqueda = document.getElementById('textoSimple');
+    const cont = document.getElementById('info');
+
+    cont.innerHTML = ""
+
+    try {
+      const autor = await db.collection("libros").where("autor", "==",busqueda.value).get()
+      const titulo = await db.collection("libros").where("titulo", "==", busqueda.value).get()
+        const res = []
+
+        function imprimirLibro(doc) {
+            if (!res.includes(doc.id)) {
+
+                cont.innerHTML += "<div> <h1>" + doc.data().titulo + "</h1> " + "Autor: " + doc.data().autor
+                    + "<br/>"  + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
+                    " <img src= '" + doc.data().url_imagen + "'/> " + "</div>"
+                res.join(doc.id)
+            }
+        }
+
+        autor.forEach(imprimirLibro)
+        titulo.forEach(imprimirLibro)
+    }
+    catch (error) {
+        console.log("Error ", error);
+    }
+
+}

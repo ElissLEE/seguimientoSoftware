@@ -16,38 +16,49 @@
 
 <body>
     <!--Reseña-->
-    <br>
-    <textarea id="texto-resenia" cols="30" rows="5"></textarea>
-    <br>
-    <button id="boton" type="button" class="btn btn-primary" onclick="mostrarResenia()">
-        Enviar reseña
-    </button>
-    <div id="reseniasTotales"></div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reseña</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <div id="data"></div>
+              </div>
+              <div class="col">
+                <br>
+                <textarea id="texto-resenia" cols="30" rows="5"></textarea>
+                <br>
+                <button id="boton" type="button" class="btn btn-primary" onclick="mostrarResenia()">
+                    Enviar reseña
+                </button>
+                <div id="reseniasTotales"></div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Reseña</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Esto fue lo que escribiste</h5>
+                                <p id="textoD-resenia"> </p>
+                                <hr>
+                                <h5>Seguro quieres agregar esta reseña?</h5>
+                                <p>tu reseña hara parte de la descripcion del perfil del libro</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" onclick="generarResenia()"> Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <h5>Esto fue lo que escribiste</h5>
-                    <p id="textoD-resenia"> </p>
-                    <hr>
-                    <h5>Seguro quieres agregar esta reseña?</h5>
-                    <p>tu reseña hara parte de la descripcion del perfil del libro</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="generarResenia()"> Aceptar</button>
-                </div>
+              </div>
             </div>
-        </div>
-    </div>
+ 
+</div>
 
     <!--importaciones-->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
