@@ -68,7 +68,7 @@ async function obtenerLibro(){
 
     for (let index = 0; index < resenias.length; index++) {
 
-        containerInformacion.innerHTML += resenias[index] + "<br>"
+        containerInformacion.innerHTML += "("+(index+1) +")"+ resenias[index] + "<br>" +"<br>"
 
     }
 
@@ -103,12 +103,13 @@ function verMas(id_libro) {
             title= doc.data().titulo;
             desc= doc.data().descripcion;
             ruta= doc.data().url_imagen;
-            autor= doc.data().autor
-             
+            autor= doc.data().autor;
+            isbn=doc.data().ISBN;
+            editorial=doc.data().editorial;
             data = document.getElementById('data');
             
     
-            data.innerHTML = "<div id='container'> <h1>"+title+"</h1> <hr> <img src="+ruta+" style= width:197px ;height:300'><p>"+desc+"</p></div>";
+            data.innerHTML = "<div id='container' class='my-4'> <h1>"+title+"</h1> <hr> <div id = 'section' align='center' class='my-4' ><img src="+ruta+"  style= width:197px ;height:300'> </div> <p>"+"<b>Autor </b>: "+autor +"<br><b>Isbn :</b> "+isbn+"<br> <b>Editorial </b>: "+editorial+"</p>"+desc+"</div></div></div>";
             
         })
     }

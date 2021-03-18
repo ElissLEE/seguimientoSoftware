@@ -15,22 +15,64 @@
 </head>
 
 <body>
-    <!--Reseña-->
-    <div class="container">
+
+    <!--Barra de navegacion superior--> 
+    <nav class="navbar navbar-dark bg-primary">
         <div class="container">
-            <div class="row">
-              <div class="col">
+            <a class="navbar-brand" href="../index.html" >Begeu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Búsqueda ISBN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctanos</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div> <!--fincontainer--> 
+      </nav>
+    
+    <!--Reseña--> 
+   
+    <div class="container">
+        <div class="container">   
+           <div class="row">
+            <div class="col">
                 <div id="data"></div>
               </div>
               <div class="col">
-                <br>
-                <textarea id="texto-resenia" cols="30" rows="5"></textarea>
-                <br>
-                <button id="boton" type="button" class="btn btn-primary" onclick="mostrarResenia()">
-                    Enviar reseña
-                </button>
-                <div id="reseniasTotales"></div>
+              
                 
+                    <div class="card">
+    
+                        <br>
+                        <textarea id="texto-resenia" cols="30" rows="5" placeholder="Coloca aqui tu reseña!!!"></textarea>
+                        <br>
+                        <button id="boton" type="button" class="btn btn-primary" onclick="mostrarResenia()">
+                            Enviar reseña
+                        </button>
+                    </div>
+                    <br>
+                    <div class="card">
+                        
+                        <div class="container">
+                            <div id="reseniasTotales">
+                            </div>
+                            </div>
+                    </div>
+                    
+                </div>
+                
+               
                 <!-- Modal -->
                 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -56,9 +98,10 @@
                     </div>
                 </div>
               </div>
-            </div>
+            </div>   
+          
  
-</div>
+
 
     <!--importaciones-->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
