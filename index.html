@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Heroic Features - Start Bootstrap Template</title>
+  <title>Begeu Library</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,29 +27,22 @@
 </head>
 
 <body>
-
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="index.html"><font face="Georgia">Begeu</font></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.html"><font face="Georgia">Inicio</font>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#"><font face="Georgia">Contáctanos</font></a>
           </li>
         </ul>
       </div>
@@ -60,26 +53,40 @@
   <div class="container">
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-      <h1 class="display-3">A Warm Welcome!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-       <!--Busqueda ISBN-->
+    <header class="jumbotron my-4" style="background-color: rgb(255, 225, 55);">
+      <!--<section>
+        <h1 class="display-3"> <font face="Georgia">BIENVEDIDO/A</font></h1>
+        <img src="Images/Logo header.png" alt="" width="300" height="300">
+      </section>
 
-    <input id="texto-busqueda" type="text" placeholder="isbn,autor,titulo" />
-    <button onclick="buscarLibro()"> Buscar</button>
-    <div id="informacionBusqueda"></div>
-    <br>
-      
-    <!--Busqueda Simple-->
-    <input id="textoSimple" type="text" placeholder="autor,titulo" />
-    <button onclick="buscarSimple()"> Buscar</button>
-    <div id="info"></div>
-    <br>
+      <p class="lead">La mejor biblioteca virtual a nivel global</p>-->
+       
+      <h2 class="display-3"> <font face="Georgia">TE DAMOS LA BIENVENIDA</font></h2>
+      <p class="lead"><font face="Georgia">A La mejor biblioteca virtual a nivel global</font></p>
     </header>
 
+    <!--Busqueda ISBN-->
+    <h4><font face="Georgia">Bucar por Isbn, autor o título del libro</font></h4>
+    <section class="d-flex justify-content-around align-item-center my-4">
+      <input class="form-control" id="texto-busqueda" type="text" placeholder="Ingresa el título del libro, su Ibsn o el nombre de su autor!" />
+      <button class="btn btn-primary ml-2" onclick="buscarLibro()"> Buscar</button>
+      <div id="informacionBusqueda"></div>
+
+    </section>
+    
+    
+    <!--Busqueda Simple-->
+    <h4><font face="Georgia">Buscar por similitud</font></h4>
+    <section class="d-flex justify-content-center align-item-center my-4">
+      <input class="form-control" id="textoSimple" type="text" placeholder="Ingresa lo que recuerdes del título del libro o de su autor!" />
+      <button class="btn btn-primary ml-2" onclick="buscarSimple()"> Buscar</button>
+      <div id="info"></div>
+      
+    </section>
+    
     
     <!-- Page Features -->
-    <div class="row" id="data">
+    <div class="row d-flex justify-content-between align-item-center my-4" id="data">
         
       </div>
 
@@ -90,9 +97,15 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+  <footer class="py-5 bg-white">
+    <div class="container" align="center">
+      <img class="" src="Images/Parkermew Library.png" alt="Logotipo"  width="500" height="400">
+      <section class="d-flex justify-content-between align-item-center my-4">
+        <img src="Images/facebook.png" alt="Facebook" width="50" height="50">
+        <img src="Images/instagram.png" alt="Instagram" width="50" height="50">
+        <img src="Images/twiter.png" alt="Twiter" width="50" height="50">
+      </section>
+      <p class="m-0 text-center text-black">Copyright &copy; Your Website 2021</p>
     </div>
     <!-- /.container -->
   </footer>
