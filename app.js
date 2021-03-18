@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   
           function imprimirLibro(doc) {
               if (!res.includes(doc.id)) {
-  
+                traeLibro(doc.id)
                   containerInformacion.innerHTML += "<div> <h1>" + doc.data().titulo + "</h1> " + "Autor: " + doc.data().autor
                       + "<br/>"  + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
                       " <img src= '" + doc.data().url_imagen + "'/> " + "</div>"
@@ -160,7 +160,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
         function imprimirLibro(doc) {
             if (!res.includes(doc.id)) {
-
+                traeLibro(doc.id)
                 cont.innerHTML += "<div> <h1>" + doc.data().titulo + "</h1> " + "Autor: " + doc.data().autor
                     + "<br/>"  + "Editorial: " + doc.data().editorial + "<br/>" + "Descripcion: " + doc.data().descripcion + "<br/>" +
                     " <img src= '" + doc.data().url_imagen + "'/> " + "</div>"
